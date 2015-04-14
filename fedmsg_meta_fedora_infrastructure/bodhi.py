@@ -255,7 +255,7 @@ class BodhiProcessor(BaseProcessor):
             agent = msg['msg']['agent']
             name = msg['msg']['stack']['name']
             return tmpl.format(agent=agent, name=name)
-        elif 'bodhi.update.karma.threshold' in msg['topic']:
+        elif 'bodhi.update.karma.threshold.reach' in msg['topic']:
             tmpl = self._("{title} reached the {status} karma threshold")
             title = msg['msg']['update']['title']
             status = msg['msg']['status']
@@ -276,7 +276,7 @@ class BodhiProcessor(BaseProcessor):
             return tmpl.format(title=msg['msg']['update']['title'])
         elif 'bodhi.update.eject' in msg['topic']:
             return tmpl.format(title=msg['msg']['update']['title'])
-        elif 'bodhi.update.karma.threshold' in msg['topic']:
+        elif 'bodhi.update.karma.threshold.reach' in msg['topic']:
             return tmpl.format(title=msg['msg']['update']['title'])
         elif 'bodhi.errata.publish' in msg['topic']:
             return tmpl.format(title=msg['msg']['update']['title'])
@@ -312,7 +312,7 @@ class BodhiProcessor(BaseProcessor):
             return set(self._u2p(msg['msg']['update']['title']))
         elif 'bodhi.update.eject' in msg['topic']:
             return set(self._u2p(msg['msg']['update']['title']))
-        elif 'bodhi.update.karma.threshold' in msg['topic']:
+        elif 'bodhi.update.karma.threshold.reach' in msg['topic']:
             return set(self._u2p(msg['msg']['update']['title']))
         elif 'bodhi.errata.publish' in msg['topic']:
             return set(self._u2p(msg['msg']['update']['title']))
@@ -390,7 +390,7 @@ class BodhiProcessor(BaseProcessor):
                 'packages/' + p for p in
                 self._u2p(msg['msg']['update']['title'])
             ])
-        elif 'bodhi.update.karma.threshold' in msg['topic']:
+        elif 'bodhi.update.karma.threshold.reach' in msg['topic']:
             return set([
                 'packages/' + p for p in
                 self._u2p(msg['msg']['update']['title'])

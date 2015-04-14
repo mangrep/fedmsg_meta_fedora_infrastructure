@@ -1005,7 +1005,7 @@ class TestBodhiKarmaThresholdStable(Base):
     """ `Bodhi2 <https://admin.fedoraproject.org/updates>`_ publishes these
     messages when an update reaches the stable or unstable karma thresholds.
     """
-    expected_title = "bodhi.update.karma.threshold"
+    expected_title = "bodhi.update.karma.threshold.reach"
     expected_subti = "tzdata-2014i-1.fc19 reached the stable karma threshold"
     expected_link = "https://admin.fedoraproject.org/updates/" + \
         "tzdata-2014i-1.fc19"
@@ -1021,7 +1021,7 @@ class TestBodhiKarmaThresholdStable(Base):
         "i": 2,
         "timestamp": 1422302779,
         "msg_id": "2015-21b9ae33-3fdf-42ab-aecb-5717d0d76018",
-        "topic": "org.fedoraproject.dev.bodhi.update.karma.threshold",
+        "topic": "org.fedoraproject.dev.bodhi.update.karma.threshold.reach",
         "msg": {
             "status": "stable",
             "update": {
