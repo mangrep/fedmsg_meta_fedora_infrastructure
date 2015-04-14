@@ -18,8 +18,7 @@
 # Authors:  Ralph Bean <rbean@redhat.com>
 #
 from fedmsg_meta_fedora_infrastructure import BaseProcessor
-from fedmsg_meta_fedora_infrastructure.fasshim import \
-        gravatar_url, gravatar_url_from_email
+from fasshim import gravatar_url, gravatar_url_from_email
 
 import requests
 

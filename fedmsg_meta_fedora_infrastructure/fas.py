@@ -17,14 +17,12 @@
 #
 # Authors:  Ralph Bean <rbean@redhat.com>
 #
-import six
-
 from fedmsg_meta_fedora_infrastructure import BaseProcessor
-from fedmsg_meta_fedora_infrastructure.fasshim import gravatar_url
+from fasshim import gravatar_url
 
 
 def string_or_dict(msg, key):
-    if isinstance(msg[key], six.text_type):
+    if isinstance(msg[key], basestring):
         return msg[key]
     else:
         if 'username' in msg[key]:
