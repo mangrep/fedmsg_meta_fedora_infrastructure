@@ -59,6 +59,26 @@ class BadgesProcessor(BaseProcessor):
         else:
             pass
 
+    def subjective(self, msg, subject, **config):
+        user = self._get_user(msg)
+        if user != subject:
+            return self.subtitle(msg, **config)
+        if 'badge.award' in msg['topic']:
+            name = msg['msg']['badge']['name']
+            tmpl = self._('you have been awarded the "{name}" badge')
+            return tmpl.format(name=name)
+        elif 'person.rank.advance' in msg['topic']:
+            rank = msg['msg']['person']['rank']
+            tmpl = self._('you moved to position {rank} '
+                          'on the badges leaderboard')
+            return tmpl.format(rank=rank)
+        elif 'person.login.first' in msg['topic']:
+            tmpl = self._('you logged in to badges.fedoraproject.org '
+                          'for the first time')
+            return tmpl
+        else:
+            pass
+
     def icon(self, msg, **config):
         if 'badge.award' in msg['topic']:
             return msg['msg']['badge']['image_url']
