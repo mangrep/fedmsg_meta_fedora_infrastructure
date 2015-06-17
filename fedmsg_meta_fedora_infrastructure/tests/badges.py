@@ -35,6 +35,8 @@ class TestNewBadge(Base):
     expected_title = "fedbadges.badge.award"
     expected_subti = 'ralph has been awarded the ' + \
         '"Something on your mind" badge'
+    expected_subjective = 'you have been awarded the ' + \
+        '"Something on your mind" badge'
     expected_link = "https://badges.fedoraproject.org/user/ralph"
     expected_icon = "http://example.com/image.png"
     expected_secondary_icon = "https://seccdn.libravatar.org/avatar/" + \
@@ -89,6 +91,8 @@ class TestRankAdvance(Base):
     """
     expected_title = "fedbadges.person.rank.advance"
     expected_subti = "ralph moved to position 1500 on the badges leaderboard"
+    expected_subjective = "you moved to position 1500 on the badges" + \
+        "leaderboard"
     expected_link = "https://badges.fedoraproject.org/user/ralph"
     expected_icon = "https://apps.fedoraproject.org/img/icons/badges.png"
     expected_secondary_icon = "https://seccdn.libravatar.org/avatar/" + \
@@ -122,6 +126,8 @@ class TestFirstLogin(Base):
     """
     expected_title = "fedbadges.person.login.first"
     expected_subti = "ralph logged in to badges.fedoraproject.org " + \
+        "for the first time"
+    expected_subjective = "you logged in to badges.fedoraproject.org " + \
         "for the first time"
     #expected_markup = (
     #    "<a href='https://badges.fedoraproject.org/user/ralph'>ralph</a> "
