@@ -1,0 +1,10 @@
+#!/home/turing/progs/github/fedmsg_meta_fedora_infrastructure/my-env/bin/python
+# PBR Generated from u'console_scripts'
+
+import sys
+
+from fedmsg.commands.announce import announce
+
+
+if __name__ == "__main__":
+    sys.exit(announce())
